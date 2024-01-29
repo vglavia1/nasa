@@ -1,4 +1,9 @@
 {
-  "compilerOptions": {},
-  "extends": "expo/tsconfig.base"
+  "compilerOptions": {
+    "paths": {
+      "@components": ["./src/components"],
+      "@constants": ["./src/constants"]
+    }
+  },
+  "extends": "expo/tsconfig.base",
 }
