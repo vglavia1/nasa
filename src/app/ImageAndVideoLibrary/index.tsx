@@ -1,4 +1,5 @@
 import { SearchBar, SearchResultImage } from "@components";
+import LoadingBar from "../../components/LoadingBar";
 import { colors } from "@constants";
 import { useQuery } from "@tanstack/react-query";
 import * as Linking from "expo-linking";
@@ -35,7 +36,7 @@ export default function App() {
             setSearchInput(userInput);
           }}
         />
-        {!data && (
+        {!data && !isLoading && (
           <View
             style={{
               backgroundColor: colors.jet,
@@ -80,9 +81,9 @@ export default function App() {
           </View>
         )}
         {isLoading ? (
-          <>
-            <Text testID="Text:Loading">Loading...</Text>
-          </>
+          <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <LoadingBar />
+          </View>
         ) : (
           <FlatList
             contentContainerStyle={styles.flatlistContainer}
