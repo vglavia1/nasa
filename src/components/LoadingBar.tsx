@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Animated, StyleSheet, View } from "react-native";
+import { Animated, StyleSheet, View, Text } from "react-native";
 import { colors } from "@constants";
 
 const LoadingBar = () => {
@@ -29,9 +29,9 @@ const LoadingBar = () => {
 
   return (
     <View style={styles.rocketContainer}>
-      <Animated.View
-        style={[styles.dot, { transform: [{ translateX: dotPosition }] }]}
-      />
+      <Animated.View style={[styles.emoji, { transform: [{ translateX: dotPosition }] }]}> 
+        <Text style={{ fontSize: 32 }}>🚀</Text>
+      </Animated.View>
     </View>
   );
 };
@@ -48,13 +48,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
   },
-  dot: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: colors.marianBlue,
-    borderWidth: 3,
-    borderColor: colors.white,
+  emoji: {
     position: "absolute",
     left: 0,
     top: 9,

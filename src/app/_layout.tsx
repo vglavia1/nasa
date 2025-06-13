@@ -11,7 +11,6 @@ export default () => {
         screenOptions={{
           headerStyle: { backgroundColor: colors.black },
           headerTitleStyle: { color: colors.white },
-          headerBackTitleVisible: false,
         }}
       />
     </QueryClientProvider>
