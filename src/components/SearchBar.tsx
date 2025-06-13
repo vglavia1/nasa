@@ -9,6 +9,7 @@ const SearchBar = ({ input, setInput, onSubmit }) => (
       onChangeText={setInput}
       testID="TextInput"
       autoFocus
+      onSubmitEditing={onSubmit}
     />
     <Pressable onPress={onSubmit} testID="Button:Submit">
       <Text style={{ color: colors.black, fontSize: 18 }}>Submit</Text>
