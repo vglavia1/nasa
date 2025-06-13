@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import { LinkProps } from "expo-router/build/link/Link";
 import { Pressable, PressableProps, Text } from "react-native";
+import { colors } from "@constants";
 
 const LinkWrapper = ({ href, children }) => (
   <Link href={href} asChild>
@@ -11,9 +12,15 @@ const LinkWrapper = ({ href, children }) => (
 const ButtonComponent = ({ onPress, text }) => (
   <Pressable
     onPress={onPress}
-    style={{ backgroundColor: "white", padding: 12, borderRadius: 24 }}
+    style={{
+      backgroundColor: colors.jet,
+      padding: 12,
+      borderRadius: 24,
+      borderWidth: 2,
+      borderColor: "white",
+    }}
   >
-    <Text style={{ textAlign: "center" }}>{text}</Text>
+    <Text style={{ textAlign: "center", color: "white" }}>{text}</Text>
   </Pressable>
 );
 

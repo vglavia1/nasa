@@ -5,10 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 import * as Linking from "expo-linking";
 import { Stack } from "expo-router";
 import React, { useState } from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { Platform, StyleSheet, Text, View, FlatList } from "react-native";
 
 import { QUERY_KEYS } from "../../api/constants";
 import { getSearch } from "../../api/search.api";
+import ApodLogo from "../../components/ApodLogo";
 
 export default function App() {
   const [userInput, setUserInput] = useState("");
@@ -24,7 +25,21 @@ export default function App() {
     <>
       <Stack.Screen
         options={{
-          title: "NASA Image and Video Library",
+          headerTitle: () => (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+              <ApodLogo />
+              <Text
+                style={{
+                  fontFamily: Platform.OS === "ios" ? "AvenirNext-DemiBold" : "sans-serif-medium",
+                  fontWeight: "bold",
+                  fontSize: 22,
+                  color: colors.marianBlue,
+                }}
+              >
+                NASA Image and Video Library
+              </Text>
+            </View>
+          ),
           headerTintColor: colors.marianBlue,
         }}
       />
